@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::post('/signup',[
+        'uses'=> 'UserController@postSignup',
+        'as'=>'signup'
+    ]);
+
+    Route::post('/signin',[
+        'uses'=> 'UserController@postSignin',
+        'as'=>'signin'
+    ]);
+ 
+    Auth::routes();
+
+    Route::get('/dashboard', [
+        'uses'=> 'UserController@getDashboard',
+        'as'=> 'dashboard'
+         ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
