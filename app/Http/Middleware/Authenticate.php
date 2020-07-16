@@ -12,10 +12,21 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
-    protected function redirectTo($request)
+     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+         if (! $request->expectsJson()) {
+             return route('home');
+            }
         }
     }
-}
+//     public function handle($request, Closure $next, $guard = null)
+//     {
+//         if (Auth::guard($guard)->guest()){
+//             if($request->ajax()){
+//                 return response('Unauthorized.', 401);
+//             }else{
+//                 return redirect()->route('home');
+//             }
+//         }
+//     }
+// }

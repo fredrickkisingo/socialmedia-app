@@ -14,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::group(['middleware'=>['web']], function(){
 
+
+
+
+    Route::get('/dashboard', [
+        'uses'=> 'UserController@getDashboard',
+        'as'=> 'dashboard',
+        'middleware'=>'auth'
+         ]);
+
+    });
 
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('home');
 
     Route::post('/signup',[
         'uses'=> 'UserController@postSignup',
@@ -32,11 +43,7 @@ use Illuminate\Support\Facades\Route;
  
     Auth::routes();
 
-    Route::get('/dashboard', [
-        'uses'=> 'UserController@getDashboard',
-        'as'=> 'dashboard'
-         ]);
+    Route::get('/', function (){
+        return view('welcome');
+    })->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
