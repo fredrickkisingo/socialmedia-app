@@ -9,4 +9,10 @@ use Illuminate\Contracts\Auth\Authenticatable;
 class User extends Model implements Authenticatable
 {
     use \Illuminate\Auth\Authenticatable;
+
+    //a user can have several posts
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }

@@ -47,3 +47,9 @@ Route::group(['middleware'=>['web']], function(){
         return view('welcome');
     })->name('home');
 
+    Route::post('/createpost',[
+        'uses'=>'PostController@postCreatePost',
+        'as'=>'post.create'
+    ]);
+    
+

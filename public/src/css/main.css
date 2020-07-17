@@ -18,3 +18,25 @@
     color: grey;
     font-style: italic;
   }
+
+  .error,.error ul,
+  .success{
+    text-align: center;
+  }
+  .error{
+    border:1px solid red;
+    background-color: pink;
+    color: red; 
+  }
+
+  .erro ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .success{
+    border: 1px solid green;
+    background-color:lightseagreen;
+    color: green;
+  }
