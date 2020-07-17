@@ -40,3 +40,10 @@
     background-color:lightseagreen;
     color: green;
   }
+  i{
+    cursor: pointer;
+  }
+
+  p.italic {
+    font-style: italic;
+  }

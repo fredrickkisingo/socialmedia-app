@@ -4,7 +4,7 @@
     @include('includes.message')
     <section class="row new-post">
         <div class="col-md-6 col-md-offset-3">
-                <header><h3>What do you have to Say?</h3></header>
+                <header><h3>What do you have to say?</h3></header>
         <form action="{{route('post.create') }}" method="post">
                     <div class="form-group">
                         <textarea class="form-control" name="body" id="new-post" rows="5" placeholder="Your Post"></textarea>
@@ -17,39 +17,27 @@
     <section class="row posts">
         <div class="col-md-6 col-md-offset-3">
             <header><h3>What other people say...</h3></header>
+            @foreach($posts as $post)
             <article class="post">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, necessitatibus 
-                    ex dignissimos aperiam sit iure velit voluptas, voluptatem inventore, reprehenderit tempora
-                     enim numquam? Modi alias numquam porro esse placeat facere.
-                </p>
-                <div class="info">
-                    Posted by Fred on 12th July 2020
+                <p>{{$post->body }}</p>
+                <span style="font-style:italic">
+               <b> Posted by {{$post->user->first_name}} on {{ $post->created_at }}</b>
+                </span>
+                
+                <div class="container">
+                
                 </div>
                 <div class="interaction">
-                    <a href="#">Like</a>
-                    <a href="#">Disike</a>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                   <a href="#"> <i class="fa fa-heart"  aria-hidden="true"></i></a>
+                   <a href=""> <i class="fa fa-thumbs-down"></i></a>
+                   @if(Auth::user() == $post->user)
+                   <a href="#">Edit</a>
+                   <a href="{{route('post.delete',['post_id'=>$post->id])}}">Delete</a>
+                   @endif   
                 </div>
                 <br>
             </article>
-            <article class="post">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem,
-                     necessitatibus ex dignissimos aperiam sit iure velit voluptas, voluptatem inventore,
-                      reprehenderit tempora enim numquam? Modi alias numquam porro esse placeat facere.
-                </p>
-                <div class="info">
-                    Posted by Fred on 12th July 2020
-                </div>
-                <br>
-                <div class="interaction">
-                    <a href="#">Like</a>
-                    <a href="#">Disike</a>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
-                </div>
-            </article>
-
+            @endforeach
         </div>
     </section>    
  @endsection
