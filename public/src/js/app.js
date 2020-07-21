@@ -1,4 +1,6 @@
 var postId= 0;
+var postBodyElement= null;
+
 $('.post').find('.interaction').find('.edit').on('click', function(event){
     event.preventDefault();
 
