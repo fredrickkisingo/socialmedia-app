@@ -19,9 +19,9 @@
             <header><h3>What other people say...</h3></header>
             @foreach($posts as $post)
         <article class="post" data-postid="{{$post->id}}">
-                <p>{{$post->body }}</p>
+          <b><p>{{$post->body }}</p> </b>
                 <span style="font-style:italic">
-               <b> Posted by {{$post->user->first_name}} on {{ $post->created_at }}</b>
+                Posted by {{$post->user->first_name}} on {{ $post->created_at }}
                 </span>
                 
                 <div class="container">
@@ -65,11 +65,10 @@
             </div>
           </div>
         </div>
-      </div  
+      </div>  
 
      <script>
        var token= '{{Session::token() }}';
        var url='{{route('edit') }}';
-     </script>
-      
+     </script>     
  @endsection

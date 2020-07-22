@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>['web']], function(){
 
-
-
-
     Route::get('/dashboard', [
         'uses'=> 'PostController@getDashboard',
         'as'=> 'dashboard',
         'middleware'=>'auth'
          ]);
+
+
+    
 
     });
 
@@ -63,13 +63,15 @@ Route::group(['middleware'=>['web']], function(){
         'middleware'=>'auth'
 
     ]);
-    
 
-    Route::post('/edit',[
-        'uses'=>'PostController@postEditPost',
+
+    Route::post('/edit', [
+        'uses'=> 'PostController@postEditPost',
         'as'=>'edit'
     ]);
+
+  
           
     
-;
+
 
