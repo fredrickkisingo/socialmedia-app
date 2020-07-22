@@ -55,6 +55,11 @@ Route::group(['middleware'=>['web']], function(){
         'uses'=> 'UserController@postSave',
         'as'=>'account.save'
     ]);
+
+    Route::get('/userimage/{filename}',[
+        'uses'=> 'UserController@getUserImage',
+        'as'=>'account.image'
+    ]);
  
     Auth::routes();
 
