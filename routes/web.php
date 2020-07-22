@@ -45,6 +45,16 @@ Route::group(['middleware'=>['web']], function(){
         'uses'=> 'UserController@getLogout',
         'as'=>'logout'
     ]);
+
+    Route::get('/account',[
+            'uses'=> 'UserController@getAccount',
+            'as'=> 'account'
+    ]);
+
+    Route::post('/updateaccount',[
+        'uses'=> 'UserController@postSave',
+        'as'=>'account.save'
+    ]);
  
     Auth::routes();
 
