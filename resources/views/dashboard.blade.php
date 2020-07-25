@@ -25,9 +25,9 @@
                   on {{$post->created_at}}
                   </span>
                   
-                  <div class="shadowbox">
-                  <a href="#" class="like"> {{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==1 ? 'You like this post':'Like': 'Like' }}</a>
-                    <a href="#" class="like">{{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==0 ? 'You don\'t like this post':'Disike': 'Dislike' }} </a>
+                  <div class="interaction">
+                    <a href="#" class="like"> {{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==1 ? 'You like this post':'Like': 'Like' }}</a>
+                    <a href="#" class="like">{{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==0 ? 'You don\'t like this post':'Dislike': 'Dislike' }} </a>
 
                     {{-- <i class="fa fa-heart"  aria-hidden="true"></i> --}}
                     {{-- <i class="fa fa-thumbs-down"></i> --}}
