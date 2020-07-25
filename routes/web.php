@@ -52,7 +52,7 @@ Route::group(['middleware'=>['web']], function(){
     ]);
 
     Route::post('/updateaccount',[
-        'uses'=> 'UserController@postSave',
+        'uses'=> 'UserController@postSaveAccount',
         'as'=>'account.save'
     ]);
 

@@ -17,29 +17,28 @@
     <section class="row posts">
         <div class="col-md-6 col-md-offset-3">
             <header><h3>What other people say...</h3></header>
-            @foreach($posts as $post)
-        <article class="post" data-postid="{{$post->id}}">
-          <b><p>{{$post->body }}</p> </b>
-                <span style="font-style:italic">
-                Posted by {{$post->user->first_name}} on {{ $post->created_at }}
-                </span>
-                
-                <div class="container">
-                
-                </div>
-                <div class="interaction">
-                   <a href="#"> <i class="fa fa-heart"  aria-hidden="true"></i></a>
-                   <a href="#"> <i class="fa fa-thumbs-down"></i></a>
+
+       @foreach($posts as $post)
+          <article class="post" data-postid="{{$post->id}}">
+            <b><p>{{$post->body }}</p> </b>
+                  <span style="font-style:italic">
+                  Posted by {{$post->user()->first_name}}  
+                  on {{$post->created_at}}
+                  </span>
+                  
+                  <div class="interaction">
+                    <a href="#"> <i class="fa fa-heart"  aria-hidden="true"></i></a>
+                    <a href="#"> <i class="fa fa-thumbs-down"></i></a>
 
 
-                   @if(Auth::user() == $post->user)
-                   <a href="#" class="edit">Edit</a></a>
-                   <a href="{{route('post.delete',['post_id'=>$post->id])}}">Delete</a>
-                   @endif   
-                </div>
-                <br>
-            </article>
-            @endforeach
+                    @if(Auth::user() == $post->user)
+                    <a href="#" class="edit">Edit</a></a>
+                    <a href="{{route('post.delete',['post_id'=>$post->id])}}">Delete</a>
+                    @endif   
+                  </div>
+                  <br>
+              </article>
+        @endforeach
         </div>
     </section> 
     <div class="modal" tabindex="-1" role="dialog" id="edit-modal">

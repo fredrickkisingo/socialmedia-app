@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 
-    public function getDashboard()
-    {
-        //fetch post ,all fetches all posts
-        $posts= Post::orderBy('created_at','desc')->get();
-        return view('dashboard',['posts'=>$posts]);
-    }
+        public function getDashboard()
+        {
+            //fetch post ,all fetches all posts
+            $posts= Post::orderBy('created_at','desc')->get();
+            return view('dashboard',['posts'=>$posts]);
+        }
         public function postCreatePost(Request $request)
         {
 
@@ -23,8 +23,7 @@ class PostController extends Controller
             //validation
             $post=new Post();
             $post->body=$request['body'];
-
-            //create a connection to the user
+             //create a connection to the user
            if ($request->user()->posts()->save($post)){
                $message= 'Post successfully created!';
            }
