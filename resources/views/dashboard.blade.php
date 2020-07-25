@@ -25,7 +25,7 @@
                   on {{$post->created_at}}
                   </span>
                   
-                  <div class="interaction">
+                  <div class="shadowbox">
                   <a href="#" class="like"> {{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==1 ? 'You like this post':'Like': 'Like' }}</a>
                     <a href="#" class="like">{{Auth::user()->likes()->where('post_id',$post->id)->first() ? Auth::user()->likes()->where('post_id',$post->id)->first()->like==0 ? 'You don\'t like this post':'Disike': 'Dislike' }} </a>
 
