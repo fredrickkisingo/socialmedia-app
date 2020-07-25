@@ -17,19 +17,20 @@
     <section class="row posts">
         <div class="col-md-6 col-md-offset-3">
             <header><h3>What other people say...</h3></header>
-
        @foreach($posts as $post)
           <article class="post" data-postid="{{$post->id}}">
             <b><p>{{$post->body }}</p> </b>
                   <span style="font-style:italic">
-                  Posted by {{$post->user()->first_name}}  
+                  Posted by {{ $post->user->first_name }}  
                   on {{$post->created_at}}
                   </span>
                   
                   <div class="interaction">
-                    <a href="#"> <i class="fa fa-heart"  aria-hidden="true"></i></a>
-                    <a href="#"> <i class="fa fa-thumbs-down"></i></a>
+                    <a href="#" class="like"> <i class="fa fa-heart"  aria-hidden="true"></i>Like </a>
+                    <a href="#" class="like"><i class="fa fa-thumbs-down"></i>Dislike </a>
 
+                    {{-- <i class="fa fa-heart"  aria-hidden="true"></i> --}}
+                    {{-- <i class="fa fa-thumbs-down"></i> --}}
 
                     @if(Auth::user() == $post->user)
                     <a href="#" class="edit">Edit</a></a>
@@ -68,6 +69,7 @@
 
      <script>
        var token= '{{Session::token() }}';
-       var url='{{route('edit') }}';
+       var urlEdit = '{{route('edit') }}';
+       var urlLike = '{{route('like') }}';
      </script>     
  @endsection
