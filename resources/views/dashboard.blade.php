@@ -67,6 +67,17 @@
         </div>
       </div>  
 
+      <footer class="text-muted">
+        <div class="container">
+          <p class="float-right">
+            <a href="#">Back to top</a>
+          </p>
+        </div>
+      </footer>
+        </div>
+
+      </footer>
+
      <script>
        var token= '{{Session::token() }}';
        var urlEdit = '{{route('edit') }}';

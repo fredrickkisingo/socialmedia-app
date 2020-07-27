@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-        SugarApp
+        UbuyuApp 
 @endsection
 @section('content')
            @include('includes.message')
