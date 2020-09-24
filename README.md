@@ -7,4 +7,4 @@ About Social Media App:
  
  Mainly built on the php laravel framework.
  Also implemented ajax requests to handle the like and unlike functionalities. 
- Modals have also been implemented to enable for a good user experience.
+ Jquery in the Modals has also been implemented to enable for a good user experience.
