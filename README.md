@@ -5,6 +5,6 @@
  
  :star:Technologies Used:
  
- Mainly built on the php laravel framework.
- Also implemented ajax requests to handle the like and unlike functionalities. 
- Jquery in the Modals has also been implemented to enable for a good user experience.
+ 1.Mainly built on the php laravel framework.
+ 2.ajax requests to handle the like and unlike functionalities. 
+ 3.Jquery in the Modals has also been implemented to enable for a good user experience.
