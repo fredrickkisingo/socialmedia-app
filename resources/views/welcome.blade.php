@@ -41,7 +41,7 @@
                                 <input class="form-control" type="text" name="email" id="email"value="{{ Request::old('email') }}">
                                 @error('email')
                                   <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
+                                      <strong>{{Session::get('message')}}</strong>
                                   </span>
                                 @enderror
                             </div>
@@ -50,9 +50,9 @@
                                 <input class="form-control" type="password" name="password" id="password"value="{{ Request::old('password') }}">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                    <strong>Your password is incorrect!</strong>
                                 </span>
-                            @enderror
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <input type="hidden" name="_token" value="{{Session::token() }}">
