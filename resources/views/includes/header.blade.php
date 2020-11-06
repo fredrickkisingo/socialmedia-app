@@ -9,15 +9,13 @@
       <div class="navbar-header">
       <a class="navbar-brand" href="{{ route('dashboard') }}"><img class="buyu" src="{{url('images/buyu.png')}}"></a>
       </div>
-     {{-- <button class="burger" id="burger">
+     <button class="burger" id="burger">
         &#9776
-    </button> --}}
+    </button>
     @if(Auth::user())
   </div>
     <ul class="nav navbar-nav navbar-right">
-       <button class="burger" id="burger">
-        &#9776
-    </button>
+      
       <li><a href="{{'account'}}"> Account</a></li>
     <li><a href="{{'logout'}}">Logout</a></li>
     </ul>
